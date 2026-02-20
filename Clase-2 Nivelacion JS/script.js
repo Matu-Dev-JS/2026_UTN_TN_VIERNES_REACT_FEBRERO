@@ -149,11 +149,11 @@ const resultado = operaciones.map(
 
 console.log(resultado) */
 
-const personas_complicadas = [
+/* const personas_complicadas = [
     ['pepe', 30],
     ['maria', 40],
     ['juan', 50]
-]
+] */
 //Transformar a personas complicadas en personas normales 
 /* 
 [
@@ -177,3 +177,35 @@ const personas_complicadas = [
     }
 ]
 */
+//DOM = Document object model
+
+/* const contenedor_HTML = document.getElementById('contenedor')
+
+let is_logged = false
+ */
+/* 
+Si estoy logueado me debera decir 'Usuario Logueado' dentro del span
+Sino debera decir <button>Iniciar sesion</button>
+*/
+/* 
+if(is_logged){
+    contenedor_HTML.innerHTML = '<span>usuario logueado</span>'
+}
+else{
+    contenedor_HTML.innerHTML = '<button>Iniciar sesion</button>'
+} 
+*/
+/* 
+contenedor_HTML.innerHTML = is_logged
+? '<span>usuario logueado</span>'
+: '<button>Iniciar sesion</button>' */
+
+//Renderizar dentro del div contenedor los sig datos
+const usuario = {
+    nombre: 'pepe',
+    apellido: 'suarez',
+    edad: 30,
+    isVip: true
+}
+
+//Tene en cuenta que si isVip es verdadero el usuario debera tener un span con el texto VIP, sino tendra un span con el texto "comun"
