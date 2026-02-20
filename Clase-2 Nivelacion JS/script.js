@@ -76,7 +76,7 @@ console.log('fin') */
     persona.edad = persona.edad + 1
 } */
 
-const operaciones = [
+/* const operaciones = [
     {
         operacion: '+',
         a: 1,
@@ -87,7 +87,7 @@ const operaciones = [
         a: 2,
         b: 1
     }
-]
+] */
 /* 
 Recorrer el array de operaciones para obtener un array resultante de resultados
 [
@@ -102,4 +102,78 @@ Recorrer el array de operaciones para obtener un array resultante de resultados
         b: 1
     }
 ] => [3, 1]
+*/
+//Diccionarios en JS
+/* const OPERACIONES = {
+    '+': {
+        operar: (a, b) => {
+            return a + b
+        }
+    },
+    '-': {
+        operar: (a, b) => {
+            return a - b
+        }
+    }
+}
+
+const resultado = []
+for(const operacion of operaciones){
+    const resultado_operacion = OPERACIONES[operacion].operar(operacion.a, operacion.b)
+    resultado.push(resultado_operacion)
+} */
+
+/* const operaciones = [
+    {
+        operador: '+',
+        a: 1,
+        b: 2
+    }, 
+    {
+        operador: '-',
+        a: 2,
+        b: 1
+    }
+]
+
+const resultado = operaciones.map(
+    (operacion) => {
+        if(operacion.operador === '+'){
+            return operacion.a + operacion.b
+        }
+        else if(operacion.operador === '-'){
+            return operacion.a - operacion.b
+        }
+    }
+)
+
+console.log(resultado) */
+
+const personas_complicadas = [
+    ['pepe', 30],
+    ['maria', 40],
+    ['juan', 50]
+]
+//Transformar a personas complicadas en personas normales 
+/* 
+[
+    ['pepe', 30],
+    ['maria', 40],
+    ['juan', 50]
+] 
+    transformar en: 
+[
+    {
+        nombre: 'pepe',
+        edad: 30
+    },
+    {
+        nombre: 'maria',
+        edad: 40
+    },
+    {
+        nombre: 'juan',
+        edad: 50
+    }
+]
 */
