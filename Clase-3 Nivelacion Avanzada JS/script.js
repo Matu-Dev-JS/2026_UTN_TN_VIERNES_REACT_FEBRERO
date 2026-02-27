@@ -57,3 +57,13 @@ btn_actualizar_HTML.addEventListener(
     actualizarBalance
 )
 
+
+/* 
+Practica: Contador
+- El contador empieza en 0
+- El contador debera tener un boton de '+' para sumar
+- El contador debera tener un boton de '-' para restar
+- El contador debera tener un span donde mostrara el valor actual del contador
+- Tanto la accion de + como - debera funcionar
+*/
+
