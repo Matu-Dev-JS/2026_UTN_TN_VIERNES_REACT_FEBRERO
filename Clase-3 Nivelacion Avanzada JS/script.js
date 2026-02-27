@@ -67,3 +67,39 @@ Practica: Contador
 - Tanto la accion de + como - debera funcionar
 */
 
+
+let estado_contador = 0
+
+const contador_HTML = document.getElementById('contador')
+const btn_sumar_contador = document.getElementById('btn-sumar')
+const btn_restar_contador = document.getElementById('btn-restar')
+
+function renderContador(){
+    contador_HTML.textContent = estado_contador
+}
+
+function setContador(valor){
+    estado_contador = valor
+    renderContador()
+}
+
+function incrementar (){
+    setContador(estado_contador + 1)
+}
+
+function decrementar (){
+    setContador(estado_contador - 1)
+}
+
+
+btn_sumar_contador.addEventListener(
+    'click',
+    incrementar
+)
+
+btn_restar_contador.addEventListener(
+    'click', 
+    decrementar
+)
+
+renderContador()
