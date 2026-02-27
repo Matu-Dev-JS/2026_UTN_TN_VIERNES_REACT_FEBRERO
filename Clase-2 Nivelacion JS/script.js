@@ -209,3 +209,6 @@ const usuario = {
 }
 
 //Tene en cuenta que si isVip es verdadero el usuario debera tener un span con el texto VIP, sino tendra un span con el texto "comun"
+
+
+`${1}`
