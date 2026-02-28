@@ -103,3 +103,22 @@ btn_restar_contador.addEventListener(
 )
 
 renderContador()
+
+
+/* 
+
+SI BUSCAMOS UNA FORMA PROGRAMATICA Para comunicarnos con una API o cualquier recurso externo via HTTP debemos usar fetch
+
+fetch = hacer consultas HTTP
+fetch es una funcion ASINCRONICA
+*/
+
+async function obtenerUsuarios(){
+    console.log('paso 2')
+    await fetch('https://jsonplaceholder.typicode.com/users')
+    console.log('paso 3')
+}
+
+console.log('paso 1')
+obtenerUsuarios()
+console.log('paso 4')
