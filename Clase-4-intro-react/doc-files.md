@@ -13,3 +13,5 @@ main.jsx: Archivo principal del proyecto
 
 
 App.jsx: Punto de entrada del proyecto
+
+REACT es un SPA (Single Page Application), es decir todo el contenido de la pagina sera montado sobre el index.html
