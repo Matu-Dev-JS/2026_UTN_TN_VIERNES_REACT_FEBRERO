@@ -2,7 +2,7 @@ import React from 'react'
 
 function App() {
   return (
-    <div>App</div>
+    <h1>My Page.com, <span>Hello World</span></h1>
   )
 }
 
