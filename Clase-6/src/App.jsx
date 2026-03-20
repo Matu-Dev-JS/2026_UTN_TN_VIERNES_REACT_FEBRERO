@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {v4 as uuid} from 'uuid'
 
 
 /* 
@@ -35,7 +36,11 @@ function App() {
       }
     )
     const body = await result.json()
-    setUsers(body)
+    setUsers(body.map(
+      user => { 
+        return {...user, id_generado: uuid()}
+      } )
+    )
     setLoadingUsers(false)
   }
 
@@ -67,7 +72,7 @@ function App() {
       {
         users && !loadingUsers && users.map(
           (usuario) => {
-            return <div key={usuario.id}>
+            return <div key={usuario.id_generado}>
               <h2>Usuario: {usuario.name}</h2>
               <h3>Email: {usuario.email}</h3>
               <span>Telefono: {usuario.telefono}</span>
