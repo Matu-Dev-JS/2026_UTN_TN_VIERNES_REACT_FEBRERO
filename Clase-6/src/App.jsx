@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 /* 
@@ -21,8 +21,13 @@ function App() {
   - Fetch es una funcion asincronica (Eso quiere decir que devuelve una promesa)
   */
 
+  
+
+  const [loadingUsers, setLoadingUsers] = useState(false)
+  const [users, setUsers] = useState(null)
+
   async function traerUsuarios (){
-    console.log('Emito fetch')
+    setLoadingUsers(true)
     const result = await fetch(
       'https://jsonplaceholder.typicode.com/users', 
       {
@@ -30,23 +35,39 @@ function App() {
       }
     )
     const body = await result.json()
-    console.log(body)
+    setUsers(body)
+    setLoadingUsers(false)
   }
 
-   function syncFunction (){
-    for(let i = 1; i < 1; i++){
-      console.log('paso sincronico ' + i)
-    }
-  }
-
-  traerUsuarios()
-  syncFunction()
-
+  //Esto garantiza que traerUsuarios solo se ejecute una vez
+  useEffect(//Controla cuantas veces se ejecuta una funcionalidad
+    () => { //El efecto (la funcion a controlar)
+      traerUsuarios()
+    },
+    [] //Dependencias, Si este array esta vacio, el efecto (la funcion de arriba) solo se ejecuta 1 vez
+  )
+  
+  console.log('Cargando:', loadingUsers)
+  console.log('Usuarios cargados:', users)
 
   return (
     <div>
       <h1>My Page.com, <span>Hello World</span></h1>
-    
+      {
+        loadingUsers && <span>Cargando...</span> 
+      }
+      {
+        users && !loadingUsers && users.map(
+          (usuario) => {
+            return <div key={usuario.id}>
+              <h2>Usuario: {usuario.name}</h2>
+              <h3>Email: {usuario.email}</h3>
+              <span>Telefono: {usuario.telefono}</span>
+              <hr />
+            </div>
+          }
+        )
+      }
     </div>
   )
 }
