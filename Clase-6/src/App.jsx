@@ -52,9 +52,10 @@ function App() {
 
 
   /* 
-  Crear un componente donde se llame mediante GET a https://swapi.dev/api/people, y se renderize en la pantalla la lista de pensonajes de star wars que viene de ese endpoint.
+  Crear un componente <PersonajesStarWars/> donde se llame mediante GET a https://swapi.dev/api/people, y se renderize en la pantalla la lista de pensonajes de star wars que viene de ese endpoint.
   Debe tener un estado interno de personajes
   Debe tener un estado interno para manejar el cargando
+
   */
 
   return (
