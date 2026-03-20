@@ -1,0 +1,54 @@
+import React from 'react'
+
+
+/* 
+asincronia es una forma de crear funcionalidades donde se busca maximizar la eficiencia de ejecucion de un programa
+Como se mide la eficiencia de un programa? Dar la mayor cantidad de outputs en el menor tiempo posible
+
+Normalmente en un lenguaje de programacion cuando se trabaja con asincronia se crean nuevos hilos de ejecucion en paralelo al actual que hace que nuestro programa procese mas rapido. (2 cabezas son mejor que 1)
+
+En javascript no podemos (normalmente) crear otros hilos de procesamiento (Es un lenguaje monohilo). Lo que si se puede hacer y da el "efecto" de ejecucion paralela es delegar procesos que no requieren el hilo de ejecucion y mientras utilizar el hilo de ejecucion ocioso
+En criollo: Si vas a hacerte un cafe mientras esperas a que caliente la pava podes ir haciendo las tostadas
+Para manejar esas "delegaciones" JS invento las promesas, que es un objeto que tiene un estado interno donde se maneja el "estado" actual de la tarea
+Por ejemplo, hagoUnCafe() => pasa a estar en cola de espera, mientras sigo con mi hilo de ejecucion, pero cada tanto reviso si la pava ya calento para seguir con el proceso de hacer el cafe.
+
+*/ 
+
+function App() {
+
+  /* 
+  Que funcion de JS nos permite hacer consultas HTTP? 
+  - Fetch es una funcion asincronica (Eso quiere decir que devuelve una promesa)
+  */
+
+  async function traerUsuarios (){
+    console.log('Emito fetch')
+    const result = await fetch(
+      'https://jsonplaceholder.typicode.com/users', 
+      {
+        method: "GET" //Indico al servidor que quiero traer informacion
+      }
+    )
+    const body = await result.json()
+    console.log(body)
+  }
+
+   function syncFunction (){
+    for(let i = 1; i < 1; i++){
+      console.log('paso sincronico ' + i)
+    }
+  }
+
+  traerUsuarios()
+  syncFunction()
+
+
+  return (
+    <div>
+      <h1>My Page.com, <span>Hello World</span></h1>
+    
+    </div>
+  )
+}
+
+export default App
