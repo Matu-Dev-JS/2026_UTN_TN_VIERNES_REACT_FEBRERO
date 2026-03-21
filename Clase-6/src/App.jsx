@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {v4 as uuid} from 'uuid'
+import PersonajesStarWars from './Components/PersonajesStarWars/PersonajesStarWars'
 
 
 /* 
@@ -81,6 +82,8 @@ function App() {
           }
         )
       }
+
+      <PersonajesStarWars/>
     </div>
   )
 }
