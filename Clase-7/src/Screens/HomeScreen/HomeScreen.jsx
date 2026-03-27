@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 export default function HomeScreen() {
     const products = [
@@ -26,7 +27,7 @@ export default function HomeScreen() {
                     <h2>{product.title}</h2>
                     <span>Precio: ${product.price}</span>
                     <br/>
-                    <a href={'/product/' + product.id }>Ver detalle</a>
+                    <Link to={'/product/' + product.id }>Ver detalle</Link>
                 </div>)}
             </div>
         </div>
