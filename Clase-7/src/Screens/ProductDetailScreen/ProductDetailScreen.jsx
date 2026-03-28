@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router'
+import { useParams, useSearchParams } from 'react-router'
 
 export default function ProductDetailScreen() {
     const products = [
@@ -20,8 +20,12 @@ export default function ProductDetailScreen() {
         }
     ]
 
+
     //Nos permite acceder a los parametros de la url en la que estamos
-    const {product_id} = useParams() 
+    const {product_id} = useParams()
+    const [searchParams] = useSearchParams()
+    console.log(searchParams.get('country-code'))
+
     console.log("Estoy en el producto con id: " + product_id)
 
     const product_found = products.find(product => Number(product.id) === Number(product_id))

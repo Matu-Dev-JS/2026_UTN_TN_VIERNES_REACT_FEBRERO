@@ -27,7 +27,7 @@ export default function HomeScreen() {
                     <h2>{product.title}</h2>
                     <span>Precio: ${product.price}</span>
                     <br/>
-                    <Link to={'/product/' + product.id }>Ver detalle</Link>
+                    <Link to={'/product/' + product.id + '?country-code=AR&from=ig'}>Ver detalle</Link>
                 </div>)}
             </div>
         </div>
