@@ -1,0 +1,37 @@
+.home-container {
+    background-color: #ebebeb;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Proxima Nova', -apple-system, Roboto, Arial, sans-serif;
+}
+
+.home-title {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.loading-span, .error-span {
+    display: block;
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+    }
+}
